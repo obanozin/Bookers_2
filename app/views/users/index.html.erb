@@ -1,0 +1,43 @@
+
+<div class="container">
+	<div class="row">
+		<div class="col-lg-4">
+			<%= render 'users/list', users: @users %>
+        </div>
+
+        <div class="col-lg-8">
+			<table class="table table-striped">
+				<thead>
+					<tr>
+						<th>image</th>
+						<th>name</th>
+			            <th></th>
+			        </tr>
+			    </thead>
+
+				<tbody>
+					<% @users.each do |user| %>
+						<tr> 
+							<th>
+								<%= attachment_image_tag user,  :profile_image, :fill, 50, 50 %>
+							</th>
+							<td>
+							    <%= user.name %>
+							</td>
+							<td>
+							    <%= link_to "Show", "/users/#{user.id}" %>
+							</td>
+			            </tr>
+					<% end %>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>
+
+
+
+
+
+
+	

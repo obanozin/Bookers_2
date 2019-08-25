@@ -1,0 +1,29 @@
+
+<section>
+	<h1>User info</h1>
+
+	<%= attachment_image_tag @user, :profile_image, :fill, 50, 50 %>
+
+	<p>name : <%= current_user.name %></p>
+
+	<p>introduction : <%= current_user.introduction %></p
+   
+
+	   <p><%= link_to "プロフィール編集", edit_user_path(@user), class: "pull-leftt" %></p>
+
+
+</section>
+
+<h3>New book</h3>
+<!-- form_for部分 -->
+<%= form_for(@book) do |f| %>
+
+<h4>Title</h4>
+<%= f.text_field :title %>
+
+<h4>Body</h4>
+<%= f.text_area :body %>
+
+<br><%= f.submit 'Create Book' %></br>
+
+<% end %>
